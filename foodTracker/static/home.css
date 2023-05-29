@@ -1,0 +1,8 @@
+#exampleModal > div > div > div.modal-body > form > button {
+  text-align: center;
+  margin: 0;
+}
+
+.lead {
+font-size: 1.1rem;
+}

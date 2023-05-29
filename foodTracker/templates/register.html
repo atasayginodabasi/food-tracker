@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Food Tracker | Register{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-dark mt-5">Register to Food Tracker</h2>
+      <div class="text-center mb-5 text-dark">Crate an Account for Food Tracker App</div>
+      <div class="card my-5">
+
+<form method="POST" action="" class="card-body cardbody-color p-lg-5">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.fullname.label }} {{ form.fullname(class='form-control', **{'placeholder':"Name"}) }}<br>
+    </div>
+
+    <div class="mb-3">
+        {{ form.username.label }} {{ form.username(class='form-control', **{'placeholder':"Username"}) }}<br>
+    </div>
+
+    <div class="mb-3">
+        {{ form.password.label }} {{ form.password(class='form-control', **{'placeholder':"Password"}) }}<br>
+    </div>
+
+    <div class="mb-3">
+        {{ form.pass_confirm.label }} {{ form.pass_confirm(class='form-control', **{'placeholder':"Verify Password"}) }}<br>
+    </div>
+
+    <div class="text-center">
+        {{ form.submit(class="btn btn-color px-5 mb-5 w-100") }}
+    </div>
+
+</form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

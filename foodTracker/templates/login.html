@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Food Tracker | Login{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-dark mt-5">Login</h2>
+      <div class="text-center mb-5 text-dark">Please Login with your Username and Password</div>
+
+      <div class="card my-5">
+
+  <form method="POST" class="card-body cardbody-color p-lg-5">
+      {{ form.hidden_tag() }}
+
+      <div class="mb-3">
+      {{ form.username.label }}{{ form.username(class='form-control', **{'placeholder':"Your Username"}) }}
+      </div>
+
+      <div class="mb-3">
+      {{ form.password.label }}{{ form.password(class='form-control', **{'placeholder':"Your Password"}) }}
+      </div>
+
+      <br>
+
+      <div class="text-center">
+      {{ form.submit(class="btn btn-color px-5 mb-5 w-100") }}
+      </div>
+
+  </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

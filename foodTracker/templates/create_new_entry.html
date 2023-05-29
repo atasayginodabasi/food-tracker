@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Food Tracker | New Entry{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='create_new_entry.css') }}">
+
+    <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="jumbotron" align="left">
+      <h5>Create a new Entry for your Day!</h5>
+          <p class="lead">
+           Feel free to add the foods that you consumed today by selecting from the menu below.
+           <br><br>
+           If you're not able to find your desired foods,
+              you can register them into our database:
+                      <a href="{{ url_for('add_new_food.create_new_food') }}">Add New Food Item</a></p>
+
+      </div>
+          <div class="card">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+
+            <div class="card-body">
+                <div class="form-group">
+                {{ form.date.label }}{{ form.date(class='form-control') }}
+                </div>
+
+                <div class="form-group">
+                {{ form.food_selection.label }}{{ form.food_selection(class='form-control') }}
+                </div>
+
+                <div class="form-group">
+                  {{ form.submit(class='btn btn-primary') }}
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

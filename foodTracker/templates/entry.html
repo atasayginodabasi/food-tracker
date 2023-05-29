@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Food Tracker | Entry{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="jumbotron" align="left">
+      <h5>{{ totals[0][1].strftime('%B %d, %Y') }}</h5>
+          <p class="lead">
+           List of the foods that you had for one day are displayed here. You can add new foods or delete existing ones.
+        </div>
+
+        <div>
+            <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary btn-block">
+            Add a New Entry
+          </button>
+        </div>
+
+        <div class="card-body">
+    <ul class="nav nav-pills nav-fill nav-justified" role="tablist">
+        <li class="active"><a><strong>Total:</strong></a></li>
+        <li class="nav-item"><a>Protein: <span class="badge badge-pill badge-dark">{{ totals[0][2] }}</span></a></li>
+        <li class="nav-item"><a>Carbohydates: <span class="badge badge-pill badge-dark">{{ totals[0][3] }}</span></a></li>
+        <li class="nav-item"><a>Fat: <span class="badge badge-pill badge-dark">{{ totals[0][4] }}</span></a></li>
+        <li class="nav-item"><a>Calories: <span class="badge badge-pill badge-dark">{{ totals[0][5] }}</span></a></li>
+    </ul>
+
+    <br>
+    <hr>
+    <br>
+
+     {% for entry in entry %}
+    <ul style="justify-content: center" class="nav nav-pills nav-fill nav-justified" role="tablist">
+        <li class="active"><a><strong>{{ entry.food_name }}:</strong></a></li>
+        <li class="nav-item"><a>Protein: <span class="badge badge-pill badge-dark">{{ entry.protein }}</span></a></li>
+        <li class="nav-item"><a>Carbohydrates: <span class="badge badge-pill badge-dark">{{ entry.carbohydrates }}</span></a></li>
+        <li class="nav-item"><a>Fat: <span class="badge badge-pill badge-dark">{{ entry.fat }}</span></a></li>
+        <li class="nav-item"><a>Calories: <span class="badge badge-pill badge-dark">{{ entry.calories }}</span></a></li>
+        <li class="nav-item">
+        <form  action="{{ url_for('entries.delete_entry', entry_id=entry.id) }}" method="POST">
+            <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+        </form>
+        </li>
+
+    </ul>
+
+    <br>
+    {% endfor %}
+</div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a New Entry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+
+            <div class="card-body">
+                <div class="form-group">
+                {{ form.date.label }}{{ form.date(class='form-control') }}
+                </div>
+
+                <div class="form-group">
+                {{ form.food_selection.label }}{{ form.food_selection(class='form-control') }}
+                </div>
+            </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                {{ form.submit(class='btn btn-primary') }}
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
