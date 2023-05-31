@@ -23,14 +23,3 @@ class RegistrationForm(FlaskForm):
     def check_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError("This username has been registered already!")
-
-
-class UpdateUserForm(FlaskForm):
-    fullname = StringField("Name and Surname", validators=[DataRequired()])
-    username = StringField("Username", validators=[DataRequired()])
-    picture = FileField("Update your Profile Picture", validators=[FileAllowed(["jpg", "png"])])
-    submit = SubmitField("Update")
-
-    def check_username(self, field):
-        if User.query.filter_by(username=field.data).first():
-            raise ValidationError("Your username has been registered already!")

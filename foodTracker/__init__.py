@@ -39,9 +39,11 @@ from foodTracker.home_page.views import home_page
 from foodTracker.entries.views import day_details
 from foodTracker.add_new_food.views import add_new_food
 from foodTracker.users.views import users
+from foodTracker.sales.views import sales
 
 
 app.register_blueprint(home_page)
 app.register_blueprint(day_details)
 app.register_blueprint(add_new_food)
 app.register_blueprint(users)
+app.register_blueprint(sales)
