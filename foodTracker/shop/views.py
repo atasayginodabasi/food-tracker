@@ -9,6 +9,7 @@ public_key = 'pk_test_TYooMQauvdEDq54NiTphI7jx'
 
 @sales.route('/shop', methods=['GET', 'POST'])
 def shop_page():
+    print(request.form.get('a'))
     return render_template("shop.html",
                            public_key=public_key)
 
@@ -33,3 +34,7 @@ def payment():
     )
 
     return redirect(url_for('shop.thankyou'))
+
+
+def basket():
+    pass
