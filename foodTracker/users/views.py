@@ -1,9 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint, abort
 from flask_login import login_user, current_user, logout_user, login_required
 from foodTracker import db
-from foodTracker.users.forms import RegistrationForm, LoginForm, UpdateUserForm
+from foodTracker.users.forms import RegistrationForm, LoginForm
 from foodTracker.models import User
-from foodTracker.users.picture_handler import add_profile_pic
 
 users = Blueprint('users', __name__)
 
