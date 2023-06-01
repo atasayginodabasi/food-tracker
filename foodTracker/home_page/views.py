@@ -5,7 +5,6 @@ from flask_login import current_user, login_required
 from foodTracker.models import Entries, Foods
 
 home_page = Blueprint('home_page', __name__)
-public_key = 'pk_test_6pRNASCoBOKtIshFeQd4XMUh'
 
 
 @home_page.route('/')
@@ -26,5 +25,4 @@ def home():
         paginate(page=page, per_page=5)
 
     return render_template('home.html',
-                           entries=entries,
-                           public_key=public_key)
+                           entries=entries)

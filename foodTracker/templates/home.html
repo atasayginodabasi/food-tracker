@@ -45,25 +45,6 @@
     </div>
 
 
-  <form action="{{url_for('sales.payment')}}" method="POST">
-    <article>
-      <label>
-        <span>Amount is $5.00</span>
-      </label>
-    </article>
-    <script
-      src="https://checkout.stripe.com/checkout.js"
-      class="stripe-button"
-      data-key={{public_key}}
-      data-amount="2000"
-      data-name="Puppy Adoption"
-      data-description="Donation"
-      data-image="https://images.unsplash.com/photo-1514984879728-be0aff75a6e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35dcb9bb6f3e097541dd732a99c44766&auto=format&fit=crop&w=1576&q=80"
-      data-locale="auto"
-      data-zip-code="true">
-    </script>
-  </form>
-
 <nav aria-label="Page navigation">
   <ul class="pagination justify-content-center">
     {% for page_num in entries.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
