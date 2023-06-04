@@ -37,7 +37,7 @@ def payment():
         checkout_session = stripe.checkout.Session.create(
                 line_items=session['basket'],
                 mode='payment',
-                success_url=YOUR_DOMAIN + '/thankyou',
+                success_url=YOUR_DOMAIN + '/thank-you',
                 cancel_url=YOUR_DOMAIN + '/shop',
             )
     except Exception as e:
