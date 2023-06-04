@@ -1,6 +1,7 @@
 from flask import render_template, session, url_for, request, redirect, Blueprint
 import stripe
 import pandas as pd
+import itertools
 
 sales = Blueprint('shop', __name__)
 
@@ -16,7 +17,8 @@ def shop_page():
     prices = pd.DataFrame(stripe.Price.list(limit=50).data)
 
     products = items[['id', 'default_price', 'name']] \
-        .merge(prices[['currency', 'product', 'unit_amount', 'unit_amount_decimal']], left_on='id', right_on='product') \
+        .merge(prices[['currency', 'product', 'unit_amount', 'unit_amount_decimal']],
+               left_on='id', right_on='product') \
         .drop_duplicates(subset=['name'], keep='first')
 
     return render_template("shop.html",
@@ -33,11 +35,11 @@ def thankyou():
 def payment():
     try:
         checkout_session = stripe.checkout.Session.create(
-            line_items=session['basket'],
-            mode='payment',
-            success_url=YOUR_DOMAIN + '/thankyou',
-            cancel_url=YOUR_DOMAIN + '/shop',
-        )
+                line_items=session['basket'],
+                mode='payment',
+                success_url=YOUR_DOMAIN + '/thankyou',
+                cancel_url=YOUR_DOMAIN + '/shop',
+            )
     except Exception as e:
         return str(e)
 
@@ -52,17 +54,18 @@ def basket():
             'quantity': request.form.get('quantity'),
         }
 
-        cart = session['basket']
+        cart = list(session['basket'])
+        cart.append(new_added_to_cart)
 
-        session['basket'] = [new_added_to_cart, cart]
+        session['basket'] = cart
         print(session['basket'])
 
     except KeyError:
-        print(2)
-        session['basket'] = {
+        session['basket'] = [{
             'price': request.args.get('id'),
             'quantity': request.form.get('quantity'),
-        }
+        }]
+
     return redirect(url_for("shop.shop_page"))
 
 
