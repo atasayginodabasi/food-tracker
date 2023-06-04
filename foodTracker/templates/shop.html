@@ -11,19 +11,24 @@
 
 
 <div class="card-deck">
+
+    {% for product in products.values %}
+
     <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
           <div class="card">
               <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p style="display: flex; align-items: center; justify-content: center" class="card-text">{{ product[2] }}</p>
 
-                  <form action="" method="post">
+                <p class="card-text" style="display: flex; align-items: center; justify-content: center">{{ product[5] / 100 }}₺</p>
+
+                  <form action="{{ url_for('shop.basket', id=product[1]) }}" method="post">
 
                     <div class="input-group">
                        <span class="input-group-btn">
                            <button class="btn btn-white btn-minuse" type="button">-</button>
                        </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
+                       <input type="text" class="form-control no-padding add-color text-center height-25" name="quantity" maxlength="3" value="0">
                        <span class="input-group-btn">
                            <button class="btn btn-red btn-pluss" type="button">+</button>
                        </span>
@@ -37,240 +42,7 @@
           </div>
       </div>
 
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
-    <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
-          <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                  <form action="" method="post">
-
-                    <div class="input-group">
-                       <span class="input-group-btn">
-                           <button class="btn btn-white btn-minuse" type="button">-</button>
-                       </span>
-                       <input type="text" class="form-control no-padding add-color text-center height-25" name="a" maxlength="3" value="0">
-                       <span class="input-group-btn">
-                           <button class="btn btn-red btn-pluss" type="button">+</button>
-                       </span>
-                    </div>
-
-                     <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
-                     </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-
+    {% endfor %}
 </div>
 
 <script>
