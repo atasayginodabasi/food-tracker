@@ -51,7 +51,7 @@ def basket():
     try:
         new_added_to_cart = {
             'price': request.args.get('id'),
-            'quantity': request.form.get('quantity'),
+            'quantity': int(request.form.get('quantity')),
         }
 
         cart = list(session['basket'])
@@ -63,7 +63,7 @@ def basket():
     except KeyError:
         session['basket'] = [{
             'price': request.args.get('id'),
-            'quantity': request.form.get('quantity'),
+            'quantity': int(request.form.get('quantity')),
         }]
 
     return redirect(url_for("shop.shop_page"))

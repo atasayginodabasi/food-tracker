@@ -65,21 +65,4 @@ $('.btn-pluss').on('click', function() {
 });
 </script>
 
-
-<div data-stripe-priceid="price_zzz" data-stripe-mode="payment">
-    <section>
-      <div class="product">
-        <img src="" alt="The cover of Stubborn Attachments" />
-        <div class="description">
-          <h3>Stubborn Attachments</h3>
-          <h5>$20.00</h5>
-        </div>
-      </div>
-      <form action="{{url_for('shop.payment')}}" method="POST">
-        <button type="submit" id="checkout-button">Checkout</button>
-      </form>
-    </section>
-</div>
-
-
 {% endblock %}
