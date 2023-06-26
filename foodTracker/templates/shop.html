@@ -35,7 +35,7 @@
                     </div>
 
                      <div style="display: flex; align-items: center; justify-content: center">
-                      <button style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
+                      <button name="addToCart" style="background-color: #343a40; border-color: #343a40; display: flex; align-items: center; justify-content: center" type="submit" class="btn btn-primary btn-block">Add to Cart</button>
                      </div>
                   </form>
               </div>
@@ -46,13 +46,21 @@
 </div>
 
 <script>
-$('.btn-minuse').on('click', function(){
-            $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
-            })
+$('.btn-minuse').on('click', function() {
+  var inputField = $(this).parent().siblings('input');
+  var currentValue = parseInt(inputField.val());
+  if (currentValue > 0) {
+    inputField.val(currentValue - 1);
+  }
+});
 
-$('.btn-pluss').on('click', function(){
-            $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
-            })
+$('.btn-pluss').on('click', function() {
+  var inputField = $(this).parent().siblings('input');
+  var currentValue = parseInt(inputField.val());
+  if (currentValue >= 0) {
+    inputField.val(currentValue + 1);
+  }
+});
 </script>
 
 

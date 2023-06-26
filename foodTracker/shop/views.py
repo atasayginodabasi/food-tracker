@@ -69,7 +69,7 @@ def basket():
     return redirect(url_for("shop.shop_page"))
 
 
-def create_stop_item(productName, price, currency='usd'):
+def create_shop_item(productName, price, currency='usd'):
     print(stripe.Product.create(
         name=productName,
         default_price_data={
