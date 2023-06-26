@@ -37,11 +37,11 @@
       </li>
       {% endif %}
 
-      {% if current_user.is_authenticated %}
       <li class="nav-item active">
         <a class="nav-link" href="{{ url_for('shop.shop_page') }}">Shop</a>
       </li>
 
+      {% if current_user.is_authenticated %}
       <li class="nav-item active">
         <a class="nav-link" href="{{ url_for('users.logout') }}">Logout</a>
       </li>
