@@ -16,11 +16,13 @@
 
     <div style="padding-bottom: 5px" class="col-xs-12 col-md-4 col-sm-2">
           <div class="card">
-              <img class="card-img-top" width="150" height="150" src="https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" alt="Card image cap">
+              <img class="card-img-top" width="150" height="150"
+                   src="{{ product[2][0] }}"
+                   alt="No Image">
               <div class="card-body">
-                <p style="display: flex; align-items: center; justify-content: center" class="card-text">{{ product[2] }}</p>
+                <p style="display: flex; align-items: center; justify-content: center" class="card-text">{{ product[3] }}</p>
 
-                <p class="card-text" style="display: flex; align-items: center; justify-content: center">{{ product[5] / 100 }}₺</p>
+                <p class="card-text" style="display: flex; align-items: center; justify-content: center">{{ product[6] / 100 }}₺</p>
 
                   <form action="{{ url_for('shop.basket', id=product[1]) }}" method="post">
 

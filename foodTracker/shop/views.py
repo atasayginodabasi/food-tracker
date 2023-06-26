@@ -16,7 +16,7 @@ def shop_page():
 
     prices = pd.DataFrame(stripe.Price.list(limit=50).data)
 
-    products = items[['id', 'default_price', 'name']] \
+    products = items[['id', 'default_price', 'images', 'name']] \
         .merge(prices[['currency', 'product', 'unit_amount', 'unit_amount_decimal']],
                left_on='id', right_on='product') \
         .drop_duplicates(subset=['name'], keep='first')
@@ -69,9 +69,10 @@ def basket():
     return redirect(url_for("shop.shop_page"))
 
 
-def create_shop_item(productName, price, currency='usd'):
+def create_shop_item(productName, price, images, currency='usd'):
     print(stripe.Product.create(
         name=productName,
+        images=images,
         default_price_data={
             "unit_amount": price,
             "currency": currency,
