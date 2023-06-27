@@ -40,6 +40,7 @@ from foodTracker.entries.views import day_details
 from foodTracker.add_new_food.views import add_new_food
 from foodTracker.users.views import users
 from foodTracker.shop.views import sales
+from foodTracker.my_summary.views import my_summary
 
 
 app.register_blueprint(home_page)
@@ -47,3 +48,4 @@ app.register_blueprint(day_details)
 app.register_blueprint(add_new_food)
 app.register_blueprint(users)
 app.register_blueprint(sales)
+app.register_blueprint(my_summary)
