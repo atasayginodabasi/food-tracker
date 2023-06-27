@@ -52,18 +52,6 @@ def summary():
 
 
 def retrieve_data(start_date, end_date):
-
-    # data = pd.DataFrame({
-    #     'Date': pd.date_range(start='2023-01-01', end='2023-12-31', freq='D'),
-    #     'Value': [i ** 2 for i in range(365)]
-    # })
-    #
-    # data["Date"] = pd.to_datetime(data["Date"]).dt.date
-    #
-    # # Filter the data based on the selected date range
-    # mask = (data['Date'] >= start_date) & (data['Date'] <= end_date)
-    # filtered_data = data.loc[mask]
-
     totals = Entries.query. \
         join(Foods, Foods.id == Entries.food_selection). \
         filter(and_(Entries.user_id == str(current_user.id),
