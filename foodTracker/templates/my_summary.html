@@ -35,8 +35,12 @@
 
 <hr>
 
-<div id="graph-container" style="">
-    {{ graph | safe }}
+<div id="graph-container-totals" style="">
+    {{ graph_totals | safe }}
+</div>
+
+<div id="graph-container-fav-foods" style="">
+    {{ graph_fav_foods | safe }}
 </div>
 
 {% endblock %}
