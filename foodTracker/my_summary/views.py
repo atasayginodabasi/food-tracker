@@ -6,6 +6,7 @@ from foodTracker.my_summary.forms import DateSelectionForm
 from foodTracker.models import Entries, Foods
 from sqlalchemy import and_
 from sqlalchemy import func
+from plotly.subplots import make_subplots
 
 my_summary = Blueprint('my_summary', __name__)
 
@@ -24,26 +25,57 @@ def summary():
 
         # Retrieve data based on the selected date range
     data = retrieve_data(start_date, end_date)
-    print(data)
 
-    # Create a scatter plot using Plotly
-    fig = go.Figure(data=go.Scatter(
-        x=data['date'],
+    fig = make_subplots(
+        rows=2, cols=2,
+        specs=[
+            [{}, {}],
+            [{}, {}],
+        ],
+        subplot_titles=("Daily Total Protein Consumption",
+                        "Daily Total Carbohydrates Consumption",
+                        "Daily Total Fat Consumption",
+                        "Daily Calories",
+                        ))
+
+    fig.add_trace(go.Bar(
         y=data['total_protein'],
-        mode='markers+text+lines',
+        x=data['date'],
         text=data['total_protein'],
-        textposition='top center',
-    ))
+        textposition='auto',
+        name=f"Total Protein",
+        showlegend=False,
+    ), row=1, col=1)
 
-    fig.update_layout(
-        xaxis_title='Date',
-        yaxis_title='Value'
-    )
+    fig.add_trace(go.Bar(
+        y=data['total_carbohydrates'],
+        x=data['date'],
+        text=data['total_carbohydrates'],
+        textposition='auto',
+        name=f"Total Carbohydrates",
+        showlegend=False,
+    ), row=1, col=2)
+
+    fig.add_trace(go.Bar(
+        y=data['total_fat'],
+        x=data['date'],
+        text=data['total_fat'],
+        textposition='auto',
+        name=f"Total Fat",
+        showlegend=False,
+    ), row=2, col=1)
+
+    fig.add_trace(go.Bar(
+        y=data['calories'],
+        x=data['date'],
+        text=data['calories'],
+        textposition='auto',
+        name=f"Calories",
+        showlegend=False,
+    ), row=2, col=2)
     fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)'})
-    fig.update_xaxes(title_text="Days",
-                     patch=dict(tickmode='array',
-                                tickvals=list(data['date']),
-                                ticktext=list(data['date'].dt.strftime("%Y-%m-%d"))))
+
+    fig.update_layout(title_text='Daily Nutritions', title_x=0.5)
     graph = fig.to_html(full_html=False)
 
     return render_template("my_summary.html",
