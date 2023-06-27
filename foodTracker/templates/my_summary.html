@@ -3,13 +3,39 @@
 
 {% block content %}
 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='my_summary.css') }}">
 
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="jumbotron" align="left">
-            <h5>You can react your quick analysis here!</h5>
-        </div>
+            <h5>You can reach some of your quick analysis here!</h5>
         </div>
     </div>
+
+    <form method="POST" action="" id="form-date-selection">
+    {{ form.hidden_tag() }}
+
+    <div class="row form-group">
+        <div class="col">
+                {{ form.start_date.label }}
+                {{ form.start_date(class='form-control') }}
+        </div>
+        <div class="col">
+                {{ form.end_date.label }}
+                {{ form.end_date(class='form-control') }}
+        </div>
+    </div>
+
+    {{ form.submit(class='btn btn-primary') }}
+    </form>
+
+</div>
+
+<hr>
+
+<div id="graph-container">
+    {{ graph | safe }}
+</div>
 
 {% endblock %}
