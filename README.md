@@ -6,7 +6,7 @@ You can add your daily consumed foods to website easily. Hence, you are able to 
 
 *Motivation*: I'm currently learning Flask and following a Coursera course (course_link_here). This project idea was a homework of this course, I wanted to add something from myself to increase functionalities and have some fun.
 
-*Used Technologies*: Python, Flask, HTML, CSS, PostgreSQL, Docker and some JS. 
+*Used Technologies*: Python, Flask, HTML, CSS, PostgreSQL, Docker, Stripe, Plotly and some JS. 
 
 ---
 
@@ -56,6 +56,22 @@ At the bottom of the page, you can see the total summ of the  metrics for this c
 
 ---
 
+## My Summary Page
 
+My Summary Page shows the daily protein, carbohydrates fat and total calories for desired date range. At the bottom of the page, you can also reach the favorite goods for this date range. To reach desired date range, feel free to use dat time picker on the top and click the "Query" button!
 
+![my-summary-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/22e441f6-e2b9-4dd4-ace7-d384bc5a248e)
 
+![my-summary-2](https://github.com/atasayginodabasi/food-tracker/assets/89684816/3cd43b9b-892a-4efa-a7cc-4c1a690fd54a)
+
+---
+
+## Add New Food Item
+
+If you are not able too see your consumed food at the food list, you can create your own using "Add New Food Item" page. At this page you need to enter name of the new food, protein, carbohydrates and fat inputs. Finally, click the "Create the new Food" button.
+
+![add-new-food-item](https://github.com/atasayginodabasi/food-tracker/assets/89684816/f07db1cd-9332-424f-8366-83a9b3101143)
+
+---
+
+## Shop
