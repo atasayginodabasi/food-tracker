@@ -47,7 +47,7 @@
 
 <nav aria-label="Page navigation">
   <ul class="pagination justify-content-center">
-    {% for page_num in entries.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% for page_num in entries.iter_pages(left_edge=1, right_edge=1, left_current=5, right_current=5) %}
       {% if entries.page == page_num %}
 
       <li class="page-item disabled">
