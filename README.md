@@ -11,15 +11,26 @@ You can add your daily consumed foods to website easily. Hence, you are able to 
 ---
 
 This app contains 8 different views:
+- Login Page
+- Register Page
 - Main Page
 - Create New Entry
 - My Summary
 - Add New Food Item
 - Shop
 - Checkout
-- Login Page
-- Register Page
 
 ---
 
+<center>Login Page</center>
 ![login-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/d1c69083-d559-4797-b4e6-56fceb72fdda)
+
+You are able to enter your username and password to login in this page. If you are not registered, you can use the "Register" page.
+
+---
+
+<center>Register Page</center>
+![register-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/e1b018b4-0c26-41fd-9dd2-8cbff32c9ad7)
+
+To register to Food Tracker, you need to fill all the inputs. Name and Surname is not unique fields but your user name must be unique. I store the passwords in their hashed format. Finally, your "password" input and "verify password" fields must match.
+
