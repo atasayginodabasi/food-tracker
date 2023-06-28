@@ -1,4 +1,4 @@
-![shop-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/09828b4a-6b23-4894-93b1-f9832cea617f)﻿# Food Tracker
+# Food Tracker
 
 The Food Tracker app helps you to track your daily consumed foods. 
 
