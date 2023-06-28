@@ -1,4 +1,4 @@
-﻿# Food Tracker
+![shop-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/09828b4a-6b23-4894-93b1-f9832cea617f)﻿# Food Tracker
 
 The Food Tracker app helps you to track your daily consumed foods. 
 
@@ -24,7 +24,8 @@ This app contains 8 different views:
 
 ## Login Page
 
-![login-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/d1c69083-d559-4797-b4e6-56fceb72fdda)
+![login-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/52e46523-7aeb-4d3f-a826-d464ab3db88b)
+
 
 You are able to enter your username and password to login in this page. If you are not registered, you can use the "Register" page.
 
@@ -32,7 +33,8 @@ You are able to enter your username and password to login in this page. If you a
 
 ## Register Page
 
-![register-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/e1b018b4-0c26-41fd-9dd2-8cbff32c9ad7)
+![register-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/c8820b7a-bada-4312-b3ba-c1c1a8141ec9)
+
 
 To register to Food Tracker, you need to fill in all the inputs. Name and Surname are not unique fields but your user name must be unique. I store the passwords in their hashed format. Finally, your "password" input and "verify password" fields must match.
 
@@ -40,7 +42,8 @@ To register to Food Tracker, you need to fill in all the inputs. Name and Surnam
 
 ## Main Page
 
-![main-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/1fc473b6-0573-4373-ad57-65247293a22b)
+![main-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/76a18284-aadf-4e6e-9e67-b418ca4ccf68)
+
 
 Once you entered your correct username and password, you redirect to the main page. At the top of the page, a jumbotron welcomes you with your name.
 
@@ -50,7 +53,7 @@ Just below this button, you can reach your past nutrition consumption data sorte
 
 To reach more details of the desired day, you are able to click the "View Detail" button. On this page, you can see the corresponding day's consumed foods and their nutrition. In addition to that, you can add new foods to this day or delete the foods if you like.
 
-![view-details](https://github.com/atasayginodabasi/food-tracker/assets/89684816/80f28b5c-2f10-4340-b05b-004f19a8a384)
+![view-details](https://github.com/atasayginodabasi/food-tracker/assets/89684816/09efd98e-e7ab-4b1b-8e97-6c7f464f8245)
 
 At the bottom of the page, you can see the total sum of the metrics for this corresponding day.
 
@@ -60,9 +63,9 @@ At the bottom of the page, you can see the total sum of the metrics for this cor
 
 My Summary Page shows the daily protein, carbohydrates fat, and total calories for the desired date range. At the bottom of the page, you can also reach the favorite goods for this date range. To reach desired date range, feel free to use the date time picker on the top and click the "Query" button!
 
-![my-summary-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/22e441f6-e2b9-4dd4-ace7-d384bc5a248e)
+![my-summary-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/a2b5a933-8ce1-476c-bcc1-97e89f274e62)
 
-![my-summary-2](https://github.com/atasayginodabasi/food-tracker/assets/89684816/3cd43b9b-892a-4efa-a7cc-4c1a690fd54a)
+![my-summary-2](https://github.com/atasayginodabasi/food-tracker/assets/89684816/f354c3d1-f00a-412c-b58d-c70b079c853f)
 
 ---
 
@@ -70,7 +73,7 @@ My Summary Page shows the daily protein, carbohydrates fat, and total calories f
 
 If you are not able to see your consumed food on the food list, you can create your own using the "Add New Food Item" page. On this page, you need to enter the name of the new food, protein, carbohydrates, and fat inputs. Finally, click the "Create the new Food" button.
 
-![add-new-food-item](https://github.com/atasayginodabasi/food-tracker/assets/89684816/f07db1cd-9332-424f-8366-83a9b3101143)
+![add-new-food-item](https://github.com/atasayginodabasi/food-tracker/assets/89684816/edbfdfe3-450d-4fd7-89e8-47e6efe275db)
 
 ---
 
@@ -80,7 +83,7 @@ I used Stripe integration to take payments. It was my first time using this API 
 
 Here how it looks when you clicked the "Shop" tab:
 
-![shop](https://github.com/atasayginodabasi/food-tracker/assets/89684816/57914896-11fa-46bd-8e51-7fb54382b830)
+![shop](https://github.com/atasayginodabasi/food-tracker/assets/89684816/ebf7b3a7-589a-4d86-a24c-82d8698aef23)
 
 You can reach all of the Stripe products that I added in a 3 columned manner. It shows the image of the product, name, and finally price. You can add products to your cart using the "-" and "+" buttons.
 
@@ -88,7 +91,7 @@ Your basket will be stored in the session data. So, if you do not reset your loc
 
 I added 2 Mantı, 1 Sushi, and 3 Noodles to my basket using this feature. You can reach your number of basket items just by looking the green basket icon:
 
-![shop-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/cd127c33-2ed4-4150-9380-f425df8eb80d)
+![shop-1](https://github.com/atasayginodabasi/food-tracker/assets/89684816/e2d8ee2e-21bc-4df0-9aa8-bd881e97e40b)
 
 Totally I have 6 items in my basket.
 
@@ -98,7 +101,7 @@ Totally I have 6 items in my basket.
 
 You can reach the Checkout Page just clicking the green basket icon on the top right-hand-side of the navbar. The checkout page is Stripe's website and users would make transactions here. You can see your added cart products and their prices here.
 
-![checkout](https://github.com/atasayginodabasi/food-tracker/assets/89684816/d8bec215-5e43-4c57-a98a-a37f0a7b30fe)
+![checkout](https://github.com/atasayginodabasi/food-tracker/assets/89684816/49832609-d6b2-422f-ba05-d3d434cb852e)
 
 If the transaction is completed successfully, you will be redirected to a small "Thank you" page.
 
