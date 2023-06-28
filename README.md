@@ -22,7 +22,7 @@ This app contains 8 different views:
 
 ---
 
-<center>Login Page</center>
+## Login Page
 
 ![login-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/d1c69083-d559-4797-b4e6-56fceb72fdda)
 
@@ -30,7 +30,7 @@ You are able to enter your username and password to login in this page. If you a
 
 ---
 
-<center>Register Page</center>
+## Register Page
 
 ![register-page](https://github.com/atasayginodabasi/food-tracker/assets/89684816/e1b018b4-0c26-41fd-9dd2-8cbff32c9ad7)
 
